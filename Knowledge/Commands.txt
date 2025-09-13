@@ -1,0 +1,27 @@
+En entreprise : 
+ng new gameotheque-workspace --create-application=false
+
+ng g app gameotheque
+ng g c features/games/components/list-games
+ng g c features/games/components/table-games
+ng g c features/games/components/create-video-game
+ng g s features/games/services/get-all-video-games
+ng g c features/games/components/main-filters
+
+ng g c shared/components/people/select-people
+ng g s shared/components/people/services/people
+
+npm init -y
+npm i -D typescript
+npm run tsc -- --init
+npx tsc --init
+target: es2016
+  module: commonjs
+  strict: true
+  esModuleInterop: true
+  skipLibCheck: true
+  forceConsistentCasingInFileNames: true
+
+D:\Angular\LES FONDAMENTAUX\gameotheque-workspace\Knowledge
+
+npm run tsc -> compilation
