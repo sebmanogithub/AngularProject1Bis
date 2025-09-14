@@ -1,0 +1,20 @@
+<h2>{{ title() }}</h2>
+
+@if (items().length > 0) 
+{
+    <table>
+        <tbody>
+            @for (videoGame of items(); track videoGame.nom) {
+                <tr>
+                    <td>
+                        {{ videoGame.nom }}
+                    </td>
+                    <td>
+                        {{ videoGame.dateSortie }}
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<button (click)="clickToAddNewVideoGame()">Nouveau Jeu Video</button>
