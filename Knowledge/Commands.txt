@@ -1,12 +1,15 @@
-En entreprise : 
+En entreprise : Créer d'abord un Workspace puis une application angular puis des librairies si on veut.
 ng new gameotheque-workspace --create-application=false
+ng g app gameotheque dans le workspaces
 
-ng g app gameotheque
+
+Norme de création d'un nom d'un composant
+-->  nom du composant (ce qu'il doit faire) - nom de mon dossier de features
 ng g c features/games/components/list-games
 ng g c features/games/components/table-games
 ng g c features/games/components/create-video-game
 ng g s features/games/services/get-all-video-games
-ng g c features/games/components/main-filters
+ng g c features/games/components/main-filterss
 
 ng g c shared/components/people/select-people
 ng g s shared/components/people/services/people

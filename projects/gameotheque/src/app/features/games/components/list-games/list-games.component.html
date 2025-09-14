@@ -1,0 +1,17 @@
+@if (videoGameList.length > 0) 
+{
+    <table>
+        <tbody>
+            @for (videoGame of videoGameList; track videoGame.nom) {
+                <tr>
+                    <td>
+                        {{ videoGame.nom }}
+                    </td>
+                    <td>
+                        {{ videoGame.dateSortie }}
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>l
+}
