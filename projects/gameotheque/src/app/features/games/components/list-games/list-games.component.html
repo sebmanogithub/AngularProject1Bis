@@ -1,5 +1,11 @@
 <app-table-games 
     title="Yo" 
     [items]="videoGameList"
-    (toCreate)="prepareCreation()">
+    (toCreate)="prepareCreation()"
+    (toCancel)="cancelCreation()">
 </app-table-games>
+
+@if(readyToCreate())
+{
+    <app-create-games></app-create-games>
+}

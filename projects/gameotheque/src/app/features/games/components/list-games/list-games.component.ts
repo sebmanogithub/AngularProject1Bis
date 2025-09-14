@@ -1,15 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { VideoGame } from '../../../models/video-game';
 import { TableGamesComponent } from '../table-games/table-games.component';
+import { CreateGamesComponent } from '../create-games/create-games.component';
 
 @Component({
   selector: 'app-list-games',
   standalone: true,
-  imports: [TableGamesComponent],
+  imports: [TableGamesComponent, CreateGamesComponent],
   templateUrl: './list-games.component.html',
   styleUrl: './list-games.component.css'
 })
 export class ListGamesComponent {
+  readyToCreate = signal<boolean>(false);
+
   videoGameList: VideoGame[] = [
     { 
       dateSortie: new Date(),
@@ -26,6 +29,10 @@ export class ListGamesComponent {
   ];
 
   prepareCreation(): void {
-    console.info('Pret !');
+    this.readyToCreate.set(true);  
+  }
+
+  cancelCreation(): void {
+    this.readyToCreate.set(false);
   }
 }

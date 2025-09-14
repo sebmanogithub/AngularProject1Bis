@@ -12,8 +12,13 @@ export class TableGamesComponent {
   items = input.required<VideoGame[]>();
   title = input<string>('');
   toCreate = output<void>();
+  toCancel = output<void>();
 
   clickToAddNewVideoGame(): void {
     this.toCreate.emit();
+  }
+
+  cancelNewVideoGame(): void {
+    this.toCancel.emit();
   }
 }
