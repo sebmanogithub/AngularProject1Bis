@@ -47,6 +47,7 @@ export class LearningWhatAboutRxjsComponent implements OnInit, OnDestroy{
   }
 
   ngOnDestroy(): void {
+    console.info('Destroy')
     this.subscription.unsubscribe();
   }
 }
