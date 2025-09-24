@@ -5,6 +5,7 @@ import { CreateGamesComponent } from '../create-games/create-games.component';
 import { MainFiltersComponent } from '../main-filters/main-filters.component';
 import { GetAllVideoGamesService } from '../../services/get-all-video-games.service';
 import { AsyncPipe } from '@angular/common';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-list-games',
@@ -16,6 +17,7 @@ import { AsyncPipe } from '@angular/common';
 export class ListGamesComponent {
   private readonly service = inject(GetAllVideoGamesService);
   videoGames$ = this.service.getAll();
+  videoGames$$ = toSignal(this.videoGames$);
   readyToCreate = signal<boolean>(false);
 
   // videoGameList: VideoGame[] = [
