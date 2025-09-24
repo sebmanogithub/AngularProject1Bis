@@ -12,5 +12,10 @@ export const routes: Routes = [
     path: 'main',
     component: MainComponent
 },
-... gamesRoutes
+//... gamesRoutes
+{
+    path: 'video-games',
+    children: gamesRoutes
+    // loadChildren: () => import('./features/games/games.routes').then(item => item.gamesRoutes)
+}
 ];
